@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b31">
+  <meta name="description" content="永野人工知能研究所（Nagano Institute of Artificial Intelligence）は、基盤AI研究と実用的なAI製品・サービスの開発を目指す、準備段階の独立した個人研究プロジェクトです。">
+  <title>永野人工知能研究所 | Nagano Institute of Artificial Intelligence</title>
+  <style>
+    :root { color-scheme: light; --ink:#19243a; --muted:#53627a; --navy:#101b31; --blue:#276cf2; --accent:#75b5fa; --line:#e3e9f2; --paper:#f7f9fd; --white:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--white); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,system-ui,sans-serif; line-height:1.8; }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid #80b6ff; outline-offset:4px; border-radius:3px; }
+    .skip { position:absolute; left:-9999px; top:10px; background:white; padding:10px; }
+    .skip:focus { left:10px; z-index:20; }
+    .wrap { max-width:1120px; margin-inline:auto; padding-inline:24px; }
+    .header { position:relative; z-index:1; color:white; background:var(--navy); border-bottom:1px solid #ffffff25; }
+    .head-row { min-height:84px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { text-decoration:none; display:flex; align-items:center; gap:12px; font-weight:750; letter-spacing:.015em; line-height:1.4; }
+    .mark { flex:0 0 auto; display:grid; place-items:center; width:38px; height:38px; border:1px solid #93c5fd70; border-radius:12px; background:#ffffff16; color:#c8e4ff; font-weight:800; font-size:17px; }
+    .brand small { display:block; font-size:11px; color:#bbcae4; font-weight:500; letter-spacing:.04em; }
+    nav { display:flex; flex-wrap:wrap; gap:22px; align-items:center; }
+    nav a { color:#d6e0f0; text-decoration:none; font-size:13px; font-weight:600; }
+    nav a:hover { color:#fff; }
+    .hero { position:relative; overflow:hidden; color:white; background:radial-gradient(ellipse at 78% 5%, #284f8e 0%, transparent 40%), linear-gradient(130deg,#101b31 15%,#152947 73%,#1c3960); }
+    .hero:after { content:""; position:absolute; width:470px; height:470px; border:1px solid #92c9ff24; border-radius:50%; right:-160px; bottom:-270px; box-shadow:0 0 0 90px #95caff08,0 0 0 180px #95caff05; pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; padding-block:100px 110px; max-width:1120px; }
+    .eyebrow { margin:0 0 18px; text-transform:uppercase; color:#9acbff; font-size:12px; font-weight:700; letter-spacing:.17em; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { max-width:880px; font-weight:730; font-size:clamp(36px,6.1vw,70px); line-height:1.17; letter-spacing:-.035em; margin-bottom:25px; }
+    .japanese-name { color:#c8d8f2; font-size:clamp(18px,2.8vw,25px); letter-spacing:.04em; font-weight:550; margin-bottom:25px; }
+    .hero-copy { max-width:690px; color:#d8e4f6; font-size:16px; line-height:1.95; }
+    .status { margin-top:30px; display:inline-flex; align-items:center; gap:9px; border:1px solid #bad7ff47; padding:7px 14px; border-radius:999px; background:#ffffff0d; font-size:12px; color:#d6e8ff; }
+    .status-dot { background:#9ad2ff; border-radius:50%; width:7px; height:7px; }
+    section { padding-block:86px; }
+    .section-head { max-width:730px; margin-bottom:38px; }
+    .kicker { margin-bottom:10px; font-weight:800; font-size:12px; letter-spacing:.17em; text-transform:uppercase; color:var(--blue); }
+    h2 { font-size:clamp(27px,4vw,38px); line-height:1.4; letter-spacing:-.02em; margin-bottom:18px; }
+    .lead { font-size:16px; color:var(--muted); line-height:2; }
+    .english { margin-top:22px; color:var(--muted); line-height:1.9; font-size:14px; }
+    .features { background:var(--paper); border-block:1px solid var(--line); }
+    .cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+    .card { padding:34px 30px; background:white; border:1px solid var(--line); border-radius:14px; box-shadow:0 10px 30px #17284b06; }
+    .number { font-size:12px; font-weight:800; color:var(--blue); letter-spacing:.12em; }
+    h3 { margin:14px 0 13px; font-size:22px; line-height:1.5; }
+    .card p { color:var(--muted); font-size:14px; line-height:1.95; margin-bottom:0; }
+    .note { margin-top:30px; padding:20px 24px; border-left:3px solid #88b9fa; background:#eef4fd; color:#41516b; border-radius:0 8px 8px 0; font-size:13px; }
+    .contact { background:var(--white); }
+    .contact-panel { display:flex; justify-content:space-between; align-items:center; gap:24px; border:1px solid var(--line); border-radius:16px; padding:35px; background:linear-gradient(120deg,#fff,#f5f8ff); }
+    .contact-panel h2 { margin-bottom:10px; }
+    .contact-panel p { color:var(--muted); font-size:14px; margin:0; }
+    .mail-button { flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; background:var(--blue); color:white; padding:14px 22px; text-decoration:none; border-radius:8px; font-size:14px; font-weight:700; overflow-wrap:anywhere; }
+    .mail-button:hover { background:#1e57cd; }
+    .footer { color:#adbdd4; background:var(--navy); padding-block:30px; }
+    .footer-row { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12px; }
+    @media (max-width:720px) {
+      .head-row { align-items:flex-start; padding-block:18px; flex-direction:column; gap:15px; }
+      nav { gap:19px; }
+      .hero-inner { padding-block:76px 85px; }
+      section { padding-block:66px; }
+      .cards { grid-template-columns:1fr; }
+      .contact-panel { align-items:flex-start; flex-direction:column; padding:27px; }
+      .mail-button { width:100%; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">本文へ移動</a>
+  <header class="header">
+    <div class="wrap head-row">
+      <a class="brand" href="#top" aria-label="永野人工知能研究所 トップ">
+        <span class="mark" aria-hidden="true">N</span>
+        <span>永野人工知能研究所<small>Nagano Institute of Artificial Intelligence</small></span>
+      </a>
+      <nav aria-label="サイト内ナビゲーション">
+        <a href="#about">概要 / About</a>
+        <a href="#focus">研究領域 / Focus</a>
+        <a href="#contact">連絡先 / Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="hero" id="top">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Independent AI Research Initiative</p>
+        <h1>Nagano Institute of<br>Artificial Intelligence</h1>
+        <p class="japanese-name">永野人工知能研究所</p>
+        <p class="hero-copy">基盤AIの研究と、現実の課題に役立つAI製品・サービスの開発を目指して。<br>研究と実装の両面から、人工知能の可能性を探究します。</p>
+        <span class="status"><span class="status-dot" aria-hidden="true"></span>独立した個人研究プロジェクト・準備中 / In preparation</span>
+      </div>
+    </div>
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">About the initiative</p>
+          <h2 id="about-title">研究から、実社会への応用へ。</h2>
+          <p class="lead">永野人工知能研究所は、人工知能の基礎的な研究と、AIを利用した製品・サービスの開発を目標として準備を進めている独立した研究プロジェクトです。</p>
+          <p class="english" lang="en">The Nagano Institute of Artificial Intelligence is an independent initiative in preparation, with a focus on fundamental AI research and the development of practical AI products and services.</p>
+        </div>
+      </div>
+    </section>
+    <section class="features" id="focus" aria-labelledby="focus-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Areas of interest</p>
+          <h2 id="focus-title">今後取り組みたい領域</h2>
+          <p class="lead">以下は現在検討している研究・開発の方向性です。実施済みの研究成果や提供中のサービスを示すものではありません。</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="number">01 / RESEARCH</span>
+            <h3>基盤AIモデルの研究</h3>
+            <p>人工知能の基礎技術やモデルの能力、信頼性、評価方法などに関する研究開発を目指します。</p>
+            <p class="english" lang="en">Exploring foundational AI models, capabilities, reliability, and evaluation.</p>
+          </article>
+          <article class="card">
+            <span class="number">02 / APPLICATIONS</span>
+            <h3>AI製品・サービスの開発</h3>
+            <p>既存のAI技術やAPIも活用し、人々の課題解決につながる実用的なアプリケーションの開発を目指します。</p>
+            <p class="english" lang="en">Developing useful AI applications and services, including those built with existing AI technologies and APIs.</p>
+          </article>
+        </div>
+        <p class="note">本プロジェクトは現在、法人設立前の個人による準備段階にあります。企業・公的研究機関としての活動実績を表すものではありません。<br><span lang="en">This is an independent, pre-incorporation initiative currently in preparation, not an established corporation or public research institution.</span></p>
+      </div>
+    </section>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div>
+            <p class="kicker">Contact</p>
+            <h2 id="contact-title">お問い合わせ</h2>
+            <p>研究・開発に関するお問い合わせは、以下のメールアドレスへご連絡ください。<br><span lang="en">For inquiries, please contact us by email.</span></p>
+          </div>
+          <a class="mail-button" href="mailto:contact@naganoai.institute">contact@naganoai.institute</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-row"><span>© 2026 Nagano Institute of Artificial Intelligence</span><span>Independent research initiative · In preparation</span></div></footer>
+</body>
+</html>
